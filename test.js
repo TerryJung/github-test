@@ -1,3 +1,3 @@
 function test() {
-    console.log("test완료")
+    console.log("test complete")
 }
