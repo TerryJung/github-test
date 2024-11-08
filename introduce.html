@@ -2,6 +2,19 @@
 <html> 
     <head> <!-- 문서와 관련된 다양한 정보들이 포함-->
         <title>정용현</title> <!-- 문서의 제목 -->
+        <style>
+            h1 {
+                font-size: max(10vh, 100px);
+                
+            }
+
+            body {
+                margin: 20px;
+            }
+            h1 {
+                color: rgb(255, 0, 0);
+            }
+        </style>
     </head>
     <body> <!-- 문서 내용 -->
         <h1>정용현 / Terry Jung</h1>
@@ -16,6 +29,86 @@
             <li>2018-2019 프리랜서</li>
             <li>2014-2018 삼성전자 무선사업부</li>
         </ul>
+        <script>
+            //깔끔한 코드를 짜기 위해서 모듈별로 분리를 계속 하려고 노력해야한다
+            //깔끔한 코드를 짜기 위해서 (내가 해결해야할)문제를 분리할줄 알아야 한다.
+
+
+            //문제 조건
+            //1. 나이를 알아야 한다
+            //2. 신분증검사기는 신분증의 연도만 받아올수 있다
+
+            //문제의 분리
+            //1. 연도를 받아오는 방법을 구현한다
+            //2. 현재 연도에서 신분증의 연도를 빼는 기능을 구현한다
+            
+            let age = 18
+            if (age>=20) {
+                console.log("성인 입니다!! 술 마셔도 되요!")
+            } else {
+                console.log("미성년자 입니다!! 술 마시면 안되요!!")
+            }
+
+            
+
+            const twitterArticle = [
+                {
+                    "id" : "abc",
+                    "text" : "현생 살기 어렵다"
+                }, 
+                {   
+                    "id" : "bca",
+                    "text" : "음악이란 국가가 허락한 유일한 마약"
+                }, 
+                {
+                    "id" : "leelermalz",
+                    "text" : "난 너의 맘을 한개도 몰라"
+                }
+            ]
+
+            for(let i=0; i<twitterArticle.length; i++) {
+                console.log("글쓴이 " + twitterArticle[i].id)
+                console.log("게시글 " + twitterArticle[i].text)
+            }
+
+            const article = { // this is object also JSON(Javascript Object Notation, 자바스크립트 객체 표현법)
+                    "id" : "abc",
+                    "text" : "현생 살기 어렵다"
+                }
+            console.log(article.text)
+
+            const nameObject = { // this is function object
+	            firstName: "Susan",
+	            lastName: "Smith",
+	            fullName: function() { 'use strict';
+		            return this.firstName + ' ' + this.lastName;
+	            }
+            };
+
+            console.log(nameObject.fullName())
+
+
+            const add = function(x, y) {
+                return x+y;
+            }
+            const minus = function(x, y) {
+                return x-y
+            }
+            
+
+            function multi(runnable,y) {
+                return runnable(1,2) * y;
+            }
+
+            console.log("계산 결과값 : " + multi(add, 2));
+            console.log("마이너스 계산 결과값 : " + multi(minus, 2))
+
+            
+
+
+       
+
+        </script>
 
         <p><a href="mailto:traveler.terry@gmail.com">traveler.terry@gmail.com</a></p>
         <p><a href="https://github.com/terryjung">Github</a></p>
