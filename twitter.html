@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <ul class="twitter-post">
+            
+        </ul>
+        <script>
+            const twitterArticle = [
+                {
+                    "id" : "abc",
+                    "text" : "현생 살기 어렵다",
+                    "age" : 19
+                }, 
+                {   
+                    "id" : "bca",
+                    "text" : "음악이란 국가가 허락한 유일한 마약",
+                    "age" : 24
+                }, 
+                {
+                    "id" : "leelermalz",
+                    "text" : "난 너의 맘을 한개도 몰라",
+                    "age" : 2036
+
+                }
+            ]
+            const getAge = function(year) {
+                let result = 2025-year
+                if(result < 0) {
+                    return result * -1
+                } else {
+                    return result
+                }
+            }
+            
+            for(let i=0; i<twitterArticle.length; i++) {
+                let node = document.querySelector(".twitter-post")
+                let postItem = "<li><p>"+twitterArticle[i].id+"</p>"
+                    +"<p>"+twitterArticle[i].text+"</p>"
+                    +"<p>"+getAge(twitterArticle[i].age)+"</p></li>"
+                node.innerHTML += postItem
+            }
+
+            
+        </script>
+
+
+    </body>
+</html>
