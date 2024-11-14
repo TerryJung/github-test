@@ -1,7 +1,7 @@
-let cityBus = {
-    "departure" : "서울역",
-    "arrive" : "신림역",
-    "oiltype" : "경유",
-    "maxPeople" : 100,
-    
-}
+// user엔 객체 참조 값이 저장됩니다.
+let user = {
+    name: "John"
+  };
+  
+let admin = user;
+user = null;
