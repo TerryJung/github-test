@@ -1,0 +1,46 @@
+<!DOCTYPE html> <!-- 이것은 HTML 문서 입니다-->
+<html> 
+    <head> <!-- 문서와 관련된 다양한 정보들이 포함-->
+        <title>구름 딥다이브 코스에 오신것을 환영합니다</title> <!-- 문서의 제목 -->
+    </head>
+    <body> <!-- 문서 내용 -->
+        <ul id="list-item"></ul>
+
+        <script>
+            let youtubeData = [
+                {
+                    channelName: "슈카월드 코믹스",
+                    title : "주식? 어차피 님 맘대로 할거잖아요",
+                    imageUrl : "https://placehold.co/600x400",
+                    viewCount : 150000,
+                    url : "https://www.youtube.com/watch?v=qmjYZ4T5hHA&t=525s"
+                },
+                {
+                    channelName: "코딩 애플",
+                    title : "애니프사들은 코딩을 잘할까?",
+                    imageUrl : "https://placehold.co/600x400"
+                }
+            ]
+            youtubeData.forEach(function (item, index, array) {
+                
+                document.querySelector("#list-item").innerHTML += "<li><a href="+item.url+"</a><p>"
+                    +item.channelName+"</p><img src="
+                    +item.imageUrl+"/>"
+                    +item.title+
+                    +convertToSementicCount(item.viewCount)+"</li>"
+
+                   
+
+                
+            })
+
+            function convertToSementicCount(viewCount) {
+                return "15만"
+            }
+        
+
+
+
+        </script>
+    </body>
+</html>
