@@ -1,0 +1,43 @@
+<!DOCTYPE html> <!-- 이것은 HTML 문서 입니다-->
+<html> 
+    <head> <!-- 문서와 관련된 다양한 정보들이 포함-->
+        <title>구름 딥다이브 코스에 오신것을 환영합니다</title> <!-- 문서의 제목 -->
+    </head>
+    <body> <!-- 문서 내용 -->
+        <script>
+            // [groom, undefined, dive]
+            // let array = ["groom", "deep", "dive"]
+            // delete array[1]
+            // console.log(array)
+
+            // let array2 = ["groom", "deep", "dive"]
+            // array2.splice(1, 1)
+
+            // console.log(array2)
+
+            // let array3 = ["now", "groom", "deep", "dive", "react"]
+            // array3.splice(0, 3, "Lets", "Go", "deep")
+            // console.log(array3)
+
+
+            // let array4 = ["now", "groom", "deep", "dive", "react"]
+            // array4.forEach(function(item, index, array) {
+            //     console.log(index)
+            //     console.log(item)
+            // })
+
+            let array5 = ["now", "groom", "deep", "dive", "react"]
+            let result = array5.find(function(item, index, array) {
+                return item == "dive"
+            })
+
+            console.log(result)
+
+            console.log(array5.indexOf("now"))
+
+            console.log(array5.includes("deep"))
+
+            
+        </script>
+    </body>
+</html>
