@@ -21,22 +21,19 @@
                     imageUrl : "https://placehold.co/600x400"
                 }
             ]
+            let listItem = document.querySelector("#list-item")
             youtubeData.forEach(function (item, index, array) {
-                
-                document.querySelector("#list-item").innerHTML += "<li><a href="+item.url+"</a><p>"
+                listItem.innerHTML += "<li><a href="+item.url+"</a><p>"
                     +item.channelName+"</p><img src="
-                    +item.imageUrl+"/>"
+                    +item.imageUrl+"/><p>"
                     +item.title+
-                    +convertToSementicCount(item.viewCount)+"</li>"
-
-                   
-
-                
+                    +"</p>15만"+"</li>"
             })
 
-            function convertToSementicCount(viewCount) {
-                return "15만"
-            }
+            listItem.style.display = "flex"
+
+            
+
         
 
 

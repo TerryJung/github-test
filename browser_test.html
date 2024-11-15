@@ -1,0 +1,25 @@
+<!DOCTYPE html > <!-- 이것은 HTML 문서 입니다-->
+<html> 
+    <head> <!-- 문서와 관련된 다양한 정보들이 포함-->
+        <meta charset="utf-8">
+        <title>구름 딥다이브 코스에 오신것을 환영합니다</title> <!-- 문서의 제목 -->
+    </head>
+    <body> <!-- 문서 내용 -->
+        <p id="title">구름 딥 다이브 코스 Map Test</p>
+        <script> // HTML문서안에 종속되서 HTML문서를 도와주는 역할
+            console.log(this) // 웹브라우저에서 Call하면 window
+            // Node js 환경에서 call하면 global
+
+            console.log(document.body)
+
+            let area = document.createElement('div')
+            area.className = "new_post_area"
+            area.innerHTML = "<p>새로운 포스트가 등록되었습니다.</p>"
+            
+            let node = document.body.querySelector("#title")
+            node.prepend(area)
+            
+
+        </script>
+    </body>
+</html>
