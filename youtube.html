@@ -1,38 +1,98 @@
 <!DOCTYPE html> <!-- 이것은 HTML 문서 입니다-->
 <html> 
     <head> <!-- 문서와 관련된 다양한 정보들이 포함-->
+        <style>
+            #list-item > li {
+                display: grid;
+                width: 400px;
+                height: 300px;
+            }
+        </style>
         <title>구름 딥다이브 코스에 오신것을 환영합니다</title> <!-- 문서의 제목 -->
     </head>
     <body> <!-- 문서 내용 -->
         <ul id="list-item"></ul>
 
         <script>
-            let youtubeData = [
-                {
+            let youtubeChannelData = {
+                "qqq-www-eee" : {
                     channelName: "슈카월드 코믹스",
-                    title : "주식? 어차피 님 맘대로 할거잖아요",
-                    imageUrl : "https://placehold.co/600x400",
+                    subscriberCount : 1500000
+                },
+                "eee-wwww-qqq" : {
+                    channelName: "코딩애플",
+                    subscriberCount : 1500000
+                }
+            }
+            let youtubeVideoData = [
+                {
+                    channelId : "qqq-www-eee",
+                    uploadTimeStamp : 1731652930185,
+                    playtime : 210,
+                    title : "주식? 어차피 님 맘대로 할거잖아요 ",
+                    imageUrl : "https://placehold.co/300x200",
                     viewCount : 150000,
                     url : "https://www.youtube.com/watch?v=qmjYZ4T5hHA&t=525s"
                 },
                 {
-                    channelName: "코딩 애플",
+                    channelId : "eee-wwww-qqq",
+                    uploadTimeStamp: 1731652930185,
+                    playtime : 210,
                     title : "애니프사들은 코딩을 잘할까?",
-                    imageUrl : "https://placehold.co/600x400"
+                    imageUrl : "https://placehold.co/300x200",
+                    viewCount : 1050000,
+                    url : "https://www.youtube.com/watch?v=qmjYZ4T5hHA&t=525s"
                 }
             ]
             let listItem = document.querySelector("#list-item")
-            youtubeData.forEach(function (item, index, array) {
-                listItem.innerHTML += "<li><a href="+item.url+"</a><p>"
+            youtubeVideoData.forEach(function (item, index, array) {
+                listItem.innerHTML += "<li><a href='"+item.url+"'</a><p>"
                     +item.channelName+"</p><img src="
                     +item.imageUrl+"/><p>"
                     +item.title+
-                    +"</p>15만"+"</li>"
+                    +"<p>"+getSementicTimeAgo(item.uploadTimeStamp)+"</p>"+
+                    +"<p>"+getSementicViewCount(item.viewCount)+"</p></li>"
             })
 
-            listItem.style.display = "flex"
+            listItem.style.display = "grid"
 
-            
+            function getSementicViewCount(viewCount) {
+                if(viewCount < 1000) {
+                    return viewCount
+                } else if (viewCount >= 1000 && viewCount < 10000) {
+                    return viewCount/1000 + "천 회" // 1.5천 회
+                } else if (viewCount >= 10000 && viewCount < 1000000) {
+                    return viewCount/10000 + "만 회"
+                } else {
+                    return "오늘의 인기 영상"
+                }
+            }
+
+
+            function getSementicTimeAgo(timestamp) {
+                let nowTimeStamp = new Date().getTime()
+                let itemTime = new Date(timestamp)
+
+                let differHours = new Date(nowTimeStamp-itemTime.getTime()).getHours()
+                
+                if(differHours < 24) {
+                    return differHours+"시간전"
+                } else {
+                    return differHours/24 +"일전"
+                }
+            }
+
+            function getPlaytime(playtime) {
+                    return Math.trunc(playtime/60)+":"+playtime%60
+                
+            }
+
+            console.log(getPlaytime(210))
+
+            // console.log(getSementicTimeAgo(1731652930185))
+
+
+   
 
         
 
